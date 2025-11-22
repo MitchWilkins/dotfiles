@@ -6,9 +6,9 @@ if handle then
   local result = handle:read("*a")
   handle:close()
 
-  if result:match("Dark") then
-    vim.cmd("colorscheme rose-pine-moon") -- or any dark theme
-  else
+  if not result:match("Dark") then
     vim.cmd("colorscheme rose-pine-dawn") -- or any light theme
+  else
+    vim.cmd("colorscheme rose-pine-moon") -- or any dark theme
   end
 end
